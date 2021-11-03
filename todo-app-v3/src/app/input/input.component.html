@@ -1,0 +1,10 @@
+<form class="todo-input mt-4" (submit)="addNewTask()">
+  <input
+    class="input"
+    name="task"
+    type="text"
+    placeholder="Input to do"
+    [(ngModel)]="inputValue"
+  />
+  <button class="button-add"><i class="fas fa-plus-circle"></i></button>
+</form>

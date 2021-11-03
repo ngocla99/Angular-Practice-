@@ -1,0 +1,39 @@
+.todo-input {
+  position: relative;
+}
+
+.button-add {
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translateX(100%);
+  background-color: transparent;
+  cursor: pointer;
+  padding: 1.6rem 3.2rem;
+  border: none;
+  font-size: 3.2rem;
+  color: #3bc9db;
+}
+
+.button-add:hover {
+  background-color: #d0cfcf;
+  color: #444;
+}
+
+.input {
+  padding: 5px 0;
+  border: none;
+  color: #444;
+  font-size: 3.2rem;
+  padding: 1.6rem 3.2rem;
+  display: block;
+  width: 100%;
+}
+
+.input::placeholder {
+  color: #d5d5d5;
+}
+
+.input:focus {
+  outline-color: #3bc9db;
+}

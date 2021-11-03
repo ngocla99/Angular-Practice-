@@ -1,0 +1,10 @@
+<li
+  class="task {{ task.completed ? 'completed' : '' }}"
+  data-id="{{ id }}"
+  (click)="toggleCompleted(id)"
+>
+  {{ task.content }}
+  <span class="close" (click)="deleteTask(id)"
+    ><i class="fas fa-times close"></i
+  ></span>
+</li>

@@ -1,0 +1,11 @@
+<div class="container">
+  <app-todo-header></app-todo-header>
+  <div class="todo-list mx-auto">
+    <app-input (newTaskEvent)="addTask($event)"></app-input>
+    <app-list
+      [todos]="todos"
+      (toggleTodoEvent)="onToggleTodo($event)"
+      (deleteTodoEvent)="onDeleteTodo($event)"
+    ></app-list>
+  </div>
+</div>
