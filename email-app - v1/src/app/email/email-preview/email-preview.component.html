@@ -1,0 +1,18 @@
+<table class="table table-sm table-borderless">
+  <thead>
+    <tr>
+      <th scope="col" style="width: 25%">Sender</th>
+      <th scope="col" style="width: 60%">Subject</th>
+      <th scope="col" style="width: 15%">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let message of messagesByFolder | sort">
+      <td>{{ message.from | truncate }}</td>
+      <td>
+        {{ message.subject }}
+      </td>
+      <td>{{ message.date | date: "yyyy-MM-dd" }}</td>
+    </tr>
+  </tbody>
+</table>

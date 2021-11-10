@@ -1,0 +1,28 @@
+.email-header,
+.email-body {
+  padding: 1em 2em;
+}
+
+.email-header {
+  background-color: darkgray;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+p {
+  font-size: 14px;
+  margin: 0;
+}
+
+button {
+  font-size: 14px;
+}
+
+.email-body p {
+  margin-bottom: 10px;
+}

@@ -1,0 +1,19 @@
+* {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.email {
+  display: flex;
+  font-size: small;
+  height: 200px;
+}
+
+.email-box {
+  overflow-y: scroll;
+  background-color: #ddd;
+}
+
+.email-preview {
+  overflow-y: scroll;
+  flex: 1;
+}
