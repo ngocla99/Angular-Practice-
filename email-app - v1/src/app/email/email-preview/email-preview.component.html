@@ -7,7 +7,11 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let message of messagesByFolder | sort">
+    <tr
+      *ngFor="let message of messagesByFolder | sort"
+      (click)="onShowMessage(message._id)"
+      routerLinkActive="active"
+    >
       <td>{{ message.from | truncate }}</td>
       <td>
         {{ message.subject }}
