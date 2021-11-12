@@ -1,23 +1,19 @@
 <ul class="folders-list">
-  <li class="folder-item" routerLinkActive="active">
-    <a routerLink="inbox"><i class="far fa-folder"></i> inbox</a>
-  </li>
-  <li class="folder-item" routerLinkActive="active">
-    <a routerLink="finance"><i class="far fa-folder"></i> finance</a>
-  </li>
-  <li class="folder-item" routerLinkActive="active">
-    <a routerLink="travel"><i class="far fa-folder"></i> travel</a>
-  </li>
-  <li class="folder-item" routerLinkActive="active">
-    <a routerLink="personal"><i class="far fa-folder"></i> personal</a>
-  </li>
-  <li class="folder-item" routerLinkActive="active">
-    <a routerLink="spam"><i class="far fa-folder"></i> spam</a>
-  </li>
-  <li class="folder-item" routerLinkActive="active">
-    <a routerLink="drafts"><i class="far fa-folder"></i> drafts</a>
-  </li>
-  <li class="folder-item" routerLinkActive="active">
-    <a routerLink="send"><i class="far fa-folder"></i> send</a>
+  <li
+    *ngFor="let folder of folders"
+    class="folder-item"
+    (click)="onClick(folder)"
+    [ngClass]="{ active: activeFolder === folder }"
+  >
+    <a
+      ><i
+        [ngClass]="{
+          far: true,
+          'fa-folder': activeFolder !== folder,
+          'fa-folder-open': activeFolder === folder
+        }"
+      ></i>
+      {{ folder }}</a
+    >
   </li>
 </ul>
