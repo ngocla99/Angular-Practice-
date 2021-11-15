@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { EmailService } from './email.service';
 
 @Component({
   selector: 'app-email',
@@ -6,7 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./email.component.css'],
 })
 export class EmailComponent implements OnInit {
-  constructor() {}
+  userId!: number;
+  constructor(
+    private route: ActivatedRoute,
+    private emailService: EmailService
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.route.params.subscribe((params) => {
+      this.userId = +params['userId'];
+      this.emailService.updateUser.next(this.userId);
+    });
+  }
 }
