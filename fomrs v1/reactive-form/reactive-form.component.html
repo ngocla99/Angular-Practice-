@@ -1,0 +1,108 @@
+<h2 class="text-center mb-5">Reactive form</h2>
+<div>
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <h4 class="text-center">Contact us</h4>
+    <hr />
+    <div class="form-group row mb-3">
+      <label for="name" class="col-sm-3 col-form-label fw-bold text-end"
+        >Name</label
+      >
+      <div class="col-sm-9">
+        <input
+          type="text"
+          id="name"
+          name="name"
+          class="form-control"
+          placeholder="Your name"
+          formControlName="name"
+        />
+        <span
+          *ngIf="
+            !contactForm.get('name')?.valid && contactForm.get('name')?.touched
+          "
+          >Please enter a valid name!</span
+        >
+      </div>
+    </div>
+    <div class="form-group row mb-3" formArrayName="emails">
+      <label for="email" class="col-sm-3 col-form-label fw-bold text-end"
+        >Your E-mail</label
+      >
+      <div class="col-sm-7">
+        <div *ngFor="let email of emails.controls; let i = index">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="form-control"
+            placeholder="Your email"
+            [formControlName]="i"
+          />
+          <span *ngIf="!emails.controls[i].valid && emails.controls[i].touched">
+            Please enter a valid email!
+          </span>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <button type="button" class="btn btn-primary" (click)="onAddEmail()">
+          Add
+        </button>
+      </div>
+    </div>
+    <div class="form-group row mb-3" formArrayName="phones">
+      <label for="phone" class="col-sm-3 col-form-label fw-bold text-end"
+        >Your Phone</label
+      >
+      <div class="col-sm-7">
+        <div *ngFor="let phone of phones.controls; let i = index">
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            class="form-control"
+            placeholder="Your phone"
+            pattern="^[0][0-9]{9,10}$"
+            [formControlName]="i"
+          />
+          <span *ngIf="!phones.controls[i].valid && phones.controls[i].touched"
+            >Please enter a valid phone number!</span
+          >
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <button type="button" class="btn btn-primary" (click)="onAddPhone()">
+          Add
+        </button>
+      </div>
+    </div>
+    <div class="form-group row mb-3">
+      <label for="message" class="col-sm-3 col-form-label fw-bold text-end"
+        >Your Message</label
+      >
+      <div class="col-sm-9">
+        <textarea
+          id="message"
+          name="message"
+          class="form-control"
+          rows="5"
+          placeholder="Please enter your message here..."
+          formControlName="message"
+        ></textarea>
+        <span
+          *ngIf="
+            !contactForm.get('message')?.valid &&
+            contactForm.get('message')?.touched
+          "
+          >Please enter a valid phone message!</span
+        >
+      </div>
+    </div>
+    <button
+      type="submit"
+      class="btn btn-lg btn-primary d-block ms-auto"
+      [disabled]="!contactForm.valid"
+    >
+      Submit
+    </button>
+  </form>
+</div>

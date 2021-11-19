@@ -1,0 +1,17 @@
+h2 {
+  color: #bbb;
+}
+
+form {
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.ng-invalid.ng-touched:not(form, div) {
+  border-left: 5px solid #a94442;
+}
+
+.ng-valid.ng-touched:not(form, div) {
+  border-left: 5px solid #42a948;
+}
