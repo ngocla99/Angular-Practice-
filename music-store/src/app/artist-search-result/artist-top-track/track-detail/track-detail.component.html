@@ -1,0 +1,21 @@
+<div class="track-detail row align-items-center py-2">
+  <div class="col-1">
+    <img src="{{ track.images[2].url }}" alt="{{ track.name }}" />
+  </div>
+  <div class="col-4">
+    <p>{{ track.name }}</p>
+  </div>
+  <div class="col-2">
+    <p>{{ track.type }}</p>
+  </div>
+  <div class="col-2">
+    <p>{{ track.releaseDate }}</p>
+  </div>
+  <div class="col-3">
+    <audio controls *ngIf="track.previewUrl; else noPreview">
+      <source src="{{ track.previewUrl }}" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+    <ng-template #noPreview>No Preview</ng-template>
+  </div>
+</div>

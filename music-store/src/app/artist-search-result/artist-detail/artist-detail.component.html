@@ -1,0 +1,18 @@
+<div class="artist px-2 py-3">
+  <div class="img-container mx-auto">
+    <img
+      src="{{ artist?.images?.[2]?.url }}"
+      alt="The image of {{ artist?.name }}"
+    />
+  </div>
+  <div class="info">
+    <h3 class="name text-center">{{ artist?.name }}</h3>
+    <div class="popularity">Popularity: {{ artist?.popularity }}</div>
+    <small class="genres">
+      Genres:
+      <span class="genre me-1" *ngFor="let genre of artist?.genres">{{
+        genre
+      }}</span>
+    </small>
+  </div>
+</div>

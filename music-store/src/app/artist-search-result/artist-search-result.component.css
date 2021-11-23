@@ -1,0 +1,8 @@
+.result-container {
+  display: flex;
+  align-items: space-between;
+  margin: 0 auto;
+  max-width: 100%;
+  overflow-x: scroll;
+  height: 400px;
+}
