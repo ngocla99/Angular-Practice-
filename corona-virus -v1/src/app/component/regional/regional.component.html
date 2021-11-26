@@ -1,0 +1,79 @@
+<div class="d-flex align-items-center">
+  <h3 class="me-3 text-secondary">Regional</h3>
+  <div class="country dropdown">
+    <div class="label text-muted">
+      <p>Country & Region</p>
+    </div>
+    <a
+      class="dropdown-toggle text-decoration-none text-dark"
+      href="#"
+      role="button"
+      id="dropdownMenuLink"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      {{ currentRegion?.countryregion }}
+    </a>
+
+    <ul class="dropdown-menu region-list" aria-labelledby="dropdownMenuLink">
+      <li *ngFor="let region of dataRegions">
+        <a class="dropdown-item" (click)="onGetDataRegion(region)">{{
+          region.countryregion
+        }}</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="row gy-2 mb-5">
+  <div class="col-6 col-lg-3">
+    <div class="confirmed text-white">
+      <p>
+        <small class="me-2"><i class="fas fa-user"></i></small> Confirmed
+      </p>
+      <p class="number">
+        {{
+          (currentRegion?.confirmed ? currentRegion?.confirmed : "0") | number
+        }}
+      </p>
+    </div>
+  </div>
+  <div class="col-6 col-lg-3">
+    <div class="recovered text-white">
+      <p>
+        <small class="me-2"> <i class="fas fa-plus-square"></i></small>
+        Recovered
+      </p>
+      <p class="number">
+        {{
+          (currentRegion?.recovered ? currentRegion?.recovered : "0") | number
+        }}
+      </p>
+    </div>
+  </div>
+  <div class="col-6 col-lg-3">
+    <div class="deaths text-white">
+      <p>
+        <small class="me-2"><i class="fas fa-skull-crossbones"></i></small>
+        Deaths
+      </p>
+      <p class="number">
+        {{ (currentRegion?.deaths ? currentRegion?.deaths : "0") | number }}
+      </p>
+    </div>
+  </div>
+  <div class="col-6 col-lg-3">
+    <div class="fatality-rate text-white">
+      <p>
+        <small class="me-2"><i class="fas fa-exclamation-circle"></i></small>
+        Fatality rate
+      </p>
+      <p class="number">
+        {{
+          (currentRegion?.fatalityRate ? currentRegion?.fatalityRate : "0")
+            | number: "1.2-2"
+        }}%
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+.confirmed,
+.recovered,
+.deaths,
+.fatality-rate {
+  border-radius: 5px;
+  padding: 10px 20px 5px 20px;
+  font-size: 20px;
+}
+
+.confirmed {
+  background-color: #683cb7;
+}
+
+.recovered {
+  background-color: #059689;
+}
+
+.deaths {
+  background-color: #ea1e63;
+}
+
+.fatality-rate {
+  background-color: #880c52;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+.number {
+  font-size: 22px;
+}
+
+.country {
+  position: relative;
+  width: 200px;
+}
+
+.region-list {
+  height: 500px;
+  overflow-y: scroll;
+}
+
+.label {
+  position: absolute;
+  top: -15px;
+  font-size: 11px;
+}
