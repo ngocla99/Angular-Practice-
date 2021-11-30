@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="right">
+    <button
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      aria-label="Settings"
+      color="accent"
+    >
+      <span style="margin: 0"><mat-icon>filter_list</mat-icon> Orders</span>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button
+        mat-menu-item
+        *ngFor="let item of items"
+        (click)="onSort(item.order)"
+      >
+        <mat-icon>{{ item.icon }}</mat-icon>
+        <span>{{ item.order | titlecase }}</span>
+      </button>
+    </mat-menu>
+  </div>
+  <mat-form-field class="pagination" appearance="fill" color="accent">
+    <mat-label>From and To</mat-label>
+    <mat-date-range-input
+      [formGroup]="dateFilter"
+      [rangePicker]="campaignOnePicker"
+      [comparisonStart]="dateFilter.value.start"
+      [comparisonEnd]="dateFilter.value.end"
+      color="accent"
+    >
+      <input matStartDate placeholder="Start date" formControlName="start" />
+      <input matEndDate placeholder="End date" formControlName="end" />
+    </mat-date-range-input>
+    <mat-datepicker-toggle
+      matSuffix
+      [for]="campaignOnePicker"
+    ></mat-datepicker-toggle>
+    <mat-date-range-picker #campaignOnePicker></mat-date-range-picker>
+  </mat-form-field>
+</div>

@@ -1,0 +1,13 @@
+.input-container {
+  display: flex;
+  justify-content: center;
+}
+
+.input-field {
+  width: 500px;
+  margin: 0 auto;
+}
+
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: #fff;
+}

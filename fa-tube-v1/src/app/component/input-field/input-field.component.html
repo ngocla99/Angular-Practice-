@@ -1,0 +1,20 @@
+<div class="input-container">
+  <form class="search-form">
+    <mat-form-field class="input-field" color="accent" appearance="fill">
+      <mat-label>Search</mat-label>
+      <input
+        #input
+        matInput
+        type="text"
+        placeholder="Search"
+        autocomplete="off"
+        [formControl]="search"
+      />
+      <button matSuffix mat-icon-button color="accent" aria-label="Clear">
+        <mat-icon matSuffix (click)="onSearch(input.value.toString())"
+          >search</mat-icon
+        >
+      </button>
+    </mat-form-field>
+  </form>
+</div>
