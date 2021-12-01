@@ -1,0 +1,33 @@
+<h1 mat-dialog-title>Settings</h1>
+<div mat-dialog-content>
+  <mat-form-field class="field-setting" appearance="fill" color="accent">
+    <mat-label>Number per page</mat-label>
+    <mat-select [(ngModel)]="numberPerPage">
+      <mat-option value="4">4</mat-option>
+      <mat-option value="8">8</mat-option>
+      <mat-option value="16">16</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="field-setting" appearance="fill" color="accent">
+    <mat-label>Search Debounce</mat-label>
+    <input type="number" matInput [(ngModel)]="debounceTime" />
+    <span matSuffix>s</span>
+  </mat-form-field>
+
+  <mat-form-field class="field-setting" appearance="fill" color="accent">
+    <mat-label>API Key</mat-label>
+    <input type="text" matInput [(ngModel)]="key" />
+    <mat-icon matSuffix>mode_edit</mat-icon>
+    <mat-hint align="end"
+      >Guide at:
+      https://developers.google.com/youtube/v3/getting-started</mat-hint
+    >
+  </mat-form-field>
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button cdkFocusInitial color="accent" (click)="onUpdate()">
+    Ok
+  </button>
+</div>
