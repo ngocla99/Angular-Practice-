@@ -1,0 +1,8 @@
+<mat-paginator
+  [length]="PageInfo.totalResults"
+  [pageSize]="PageInfo.resultsPerPage"
+  color="accent"
+  aria-label="Select page"
+  (page)="getPaginatorData($event)"
+>
+</mat-paginator>
