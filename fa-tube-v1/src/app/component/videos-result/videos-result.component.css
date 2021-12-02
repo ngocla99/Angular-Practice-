@@ -1,0 +1,7 @@
+.videos-result {
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-auto-rows: auto;
+  place-content: center;
+  margin-bottom: 20px;
+}

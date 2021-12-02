@@ -1,0 +1,26 @@
+<mat-card class="video-card" (click)="onClick()">
+  <img mat-card-image [src]="video?.thumbnail" alt="Video thumbnail" />
+  <mat-card-header>
+    <div
+      mat-card-avatar
+      class="video-header-image"
+      style="background-image: url('{{ video?.thumbnail }}')"
+    ></div>
+    <mat-card-title>
+      {{ video.title | decode | truncate: 50 | titlecase }}
+    </mat-card-title>
+    <mat-card-subtitle>
+      {{ video.channelTitle | truncate: 20 }}
+    </mat-card-subtitle>
+    <mat-card-subtitle>
+      {{ video.publishedTime | date }}
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content *ngIf="runVideo">
+    <div class="detail">
+      <button mat-raised-button color="accent" (click)="onShowModal()">
+        Open Video
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>
