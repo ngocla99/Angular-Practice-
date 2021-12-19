@@ -1,0 +1,151 @@
+<app-quiz-header></app-quiz-header>
+<div class="container d-flex justify-content-center">
+  <div class="quiz-container">
+    <form class="quiz-form" #f (ngSubmit)="onSubmit()">
+      <div class="px-2 text-muted">
+        {{ quizData.testName }} > Question {{ currentQuiz + 1 }} of
+        {{ numberQuiz }}
+      </div>
+      <div class="quiz-content">
+        <h2 class="quiz-question">{{ questions[currentQuiz]?.question }}</h2>
+        <hr class="mb-4" />
+
+        <div>
+          <div class="form-check mb-3">
+            <input
+              type="radio"
+              class="form-check-input"
+              name="answer"
+              id="answer-a"
+              value="a"
+              [(ngModel)]="answers[currentQuiz]"
+            />
+            <label class="form-check-label" for="answer-a">
+              A. {{ questions[currentQuiz].options?.a }}
+            </label>
+          </div>
+          <div class="form-check mb-3">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="answer"
+              id="answer-b"
+              value="b"
+              [(ngModel)]="answers[currentQuiz]"
+            />
+            <label class="form-check-label" for="answer-b">
+              A. {{ questions[currentQuiz].options?.b }}
+            </label>
+          </div>
+          <div class="form-check mb-3">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="answer"
+              value="c"
+            />
+            [(ngModel)]="answers[currentQuiz]" id="answer-c"
+            <label class="form-check-label" for="answer-c">
+              C. {{ questions[currentQuiz].options?.c }}
+            </label>
+          </div>
+          <div class="form-check mb-3">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="answer"
+              [(ngModel)]="answers[currentQuiz]"
+              id="answer-d"
+              value="d"
+            />
+            <label class="form-check-label" for="answer-d">
+              D. {{ questions[currentQuiz].options?.d }}
+            </label>
+          </div>
+        </div>
+
+        <!-- <div *ngIf="questions[currentQuiz].multi">
+          <div class="form-check mb-3">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              name="answer"
+              id="answer-a"
+              value="a"
+
+            />
+            <label class="form-check-label" for="answer-a">
+              A. {{ questions[currentQuiz].options?.a }}
+            </label>
+          </div>
+          <div class="form-check mb-3">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              name="answer"
+              value="b"
+              id="answer-b"
+
+            />
+            <label class="form-check-label" for="answer-b">
+              A. {{ questions[currentQuiz].options.b }}
+            </label>
+          </div>
+          <div class="form-check mb-3">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              name="answer"
+              value="c"
+              id="answer-c"
+              (change)="onChange('c')"
+            />
+            <label class="form-check-label" for="answer-c">
+              C. {{ questions[currentQuiz].options.c }}
+            </label>
+          </div>
+          <div class="form-check mb-3">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              name="answer"
+              id="answer-d"
+              value="d"
+              (change)="onChange('d')"
+            />
+            <label class="form-check-label" for="answer-d">
+              D. {{ questions[currentQuiz].options.d }}
+            </label>
+          </div>
+        </div> -->
+      </div>
+      <div class="button">
+        <button
+          class="btn btn-prev"
+          type="button"
+          (click)="onGetQuestion('prev')"
+          [disabled]="currentQuiz < 1"
+        >
+          Previous Question
+        </button>
+        <button
+          *ngIf="currentQuiz < numberQuiz - 1"
+          class="btn btn-next"
+          type="button"
+          (click)="onGetQuestion('next')"
+        >
+          Next Question
+        </button>
+        <button
+          *ngIf="currentQuiz === numberQuiz - 1"
+          class="btn btn-submit"
+          type="submit"
+        >
+          Submit Question
+        </button>
+      </div>
+    </form>
+
+    <p class="score-content hide">10 out of 20</p>
+  </div>
+</div>
