@@ -1,0 +1,14 @@
+<nav class="navbar navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand">Quiz App</a>
+
+    <button
+      *ngIf="duration"
+      type="button"
+      class="btn btn-outline-info"
+      disabled
+    >
+      Time left: {{ duration }}
+    </button>
+  </div>
+</nav>
